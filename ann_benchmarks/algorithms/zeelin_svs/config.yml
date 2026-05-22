@@ -1,0 +1,27 @@
+float:
+  angular:
+  - base_args: ['@metric']
+    constructor: ZeelinSVS
+    disabled: false
+    docker_tag: ann-benchmarks-zeelin_svs
+    module: ann_benchmarks.algorithms.zeelin_svs
+    name: zeelin-svs
+    run_groups:
+      vamana-32:
+        arg_groups:
+        - alpha: [0.95]
+          graph_max_degree: [32]
+          window_size: [200]
+        query_args: [[30, 40, 60, 80, 100, 120, 150, 200, 300, 500]]
+      vamana-48:
+        arg_groups:
+        - alpha: [0.95]
+          graph_max_degree: [48]
+          window_size: [300]
+        query_args: [[30, 40, 60, 80, 100, 120, 150, 200, 300, 500]]
+      vamana-64:
+        arg_groups:
+        - alpha: [0.95]
+          graph_max_degree: [64]
+          window_size: [400]
+        query_args: [[30, 40, 60, 80, 100, 120, 150, 200, 300, 500]]
